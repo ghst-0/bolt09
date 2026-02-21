@@ -13,12 +13,14 @@ const {max} = Math;
     data: <Feature Bits Written Into Buffer>
   }
 */
-module.exports = ({bits, features}) => {
+export default ({bits, features}) => {
   const data = Buffer.alloc(floor(max(...features) / bits) + 1);
 
   const endIndex = data.length - 1;
 
-  features.forEach(n => data[endIndex - floor(n / bits)] |= 1 << n % bits);
+  for (const n of features) {
+    data[endIndex - floor(n / bits)] |= 1 << n % bits
+  }
 
   return {data};
 };

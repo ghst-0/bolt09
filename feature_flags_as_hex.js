@@ -1,4 +1,4 @@
-const encodeFeatures = require('./encode_features');
+import encodeFeatures from './encode_features.js';
 
 const {alloc} = Buffer;
 const bits = 8;
@@ -20,7 +20,7 @@ const uint16ByteLength = 2;
     encoded: <Serialized Feature Bits Hex Encoded String>
   }
 */
-module.exports = ({features}) => {
+export default ({features}) => {
   if (!isArray(features)) {
     throw new Error('ExpectedArrayOfFeaturesToEncodeAsHex');
   }
@@ -28,7 +28,7 @@ module.exports = ({features}) => {
   const lengthBytes = alloc(uint16ByteLength);
 
   // Exit early with zero data length encoded when there are no features
-  if (!features.length) {
+  if (features.length === 0) {
     return {encoded: lengthBytes.toString('hex')};
   }
 

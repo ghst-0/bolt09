@@ -1,4 +1,4 @@
-const encodeFeatures = require('./encode_features');
+import encodeFeatures from './encode_features.js';
 
 const bits = 5;
 const {isArray} = Array;
@@ -17,7 +17,7 @@ const {isArray} = Array;
     words: [<Bech32 Word Number>]
   }
 */
-module.exports = ({features}) => {
+export default ({features}) => {
   if (!isArray(features)) {
     throw new Error('ExpectedArrayOfFeatureBitsToEncodeAsWords');
   }
@@ -25,7 +25,7 @@ module.exports = ({features}) => {
   const words = [];
 
   // Exit early with no words when there are no features
-  if (!features.length) {
+  if (features.length === 0) {
     return {words};
   }
 

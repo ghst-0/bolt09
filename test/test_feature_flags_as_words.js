@@ -1,8 +1,6 @@
-const {deepStrictEqual} = require('node:assert').strict;
-const test = require('node:test');
-const {throws} = require('node:assert').strict;
-
-const {featureFlagsAsWords} = require('./../');
+import test from 'node:test';
+import { deepStrictEqual, throws,  } from 'node:assert/strict';
+import { featureFlagsAsWords } from './../index.js';
 
 const tests = [
   {
@@ -22,9 +20,9 @@ const tests = [
   },
 ];
 
-tests.forEach(({args, description, error, expected}) => {
-  return test(description, (t, end) => {
-    if (!!error) {
+for (const { args, description, error, expected } of tests) {
+  test(description, (t, end) => {
+    if (error) {
       throws(() => featureFlagsAsWords(args), new Error(error), 'Got error');
     } else {
       const res = featureFlagsAsWords(args);
@@ -34,4 +32,4 @@ tests.forEach(({args, description, error, expected}) => {
 
     return end();
   });
-});
+}

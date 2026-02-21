@@ -1,4 +1,4 @@
-const featureFlagDetails = require('./feature_flag_details');
+import featureFlagDetails from './feature_flag_details.js';
 
 const isEven = number => !(number % 2);
 const range = len => Array.from(Array(len).keys());
@@ -22,7 +22,7 @@ const range = len => Array.from(Array(len).keys());
     }]
   }
 */
-module.exports = ({bits, elements}) => {
+export default ({bits, elements}) => {
   const endIndex = elements.length - 1;
   const features = new Set();
 

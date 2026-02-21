@@ -1,4 +1,4 @@
-const featureFlags = require('./feature_flags');
+import featureFlags from './feature_flags.json' with { type: 'json' };
 
 const isNumber = n => !isNaN(n);
 
@@ -16,12 +16,12 @@ const isNumber = n => !isNaN(n);
     [type]: <Feature Flag Type String>
   }
 */
-module.exports = ({bit}) => {
+export default ({bit}) => {
   if (!isNumber(bit)) {
     throw new Error('ExpectedBitNumberToGetFeatureFlagDetails');
   }
 
   const flag = featureFlags[bit.toString()];
 
-  return !flag ? {} : {type: flag.type};
+  return flag ? { type: flag.type } : {};
 };

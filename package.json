@@ -17,6 +17,7 @@
     "lightning-network"
   ],
   "license": "MIT",
+  "type": "module",
   "main": "index.js",
   "name": "bolt09",
   "repository": {
@@ -24,7 +25,7 @@
     "url": "https://github.com/alexbosworth/bolt09.git"
   },
   "scripts": {
-    "test": "npx nyc@17.1 node --experimental-test-coverage --test"
+    "test": "node --experimental-test-coverage --test"
   },
   "version": "2.2.0"
 }

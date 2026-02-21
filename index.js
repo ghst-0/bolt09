@@ -1,10 +1,10 @@
-const featureFlagDetails = require('./feature_flag_details');
-const featureFlagsAsHex = require('./feature_flags_as_hex');
-const featureFlagsAsWords = require('./feature_flags_as_words');
-const featureFlagsFromHex = require('./feature_flags_from_hex');
-const featureFlagsFromWords = require('./feature_flags_from_words');
+import featureFlagDetails from './feature_flag_details.js';
+import featureFlagsAsHex from './feature_flags_as_hex.js';
+import featureFlagsAsWords from './feature_flags_as_words.js';
+import featureFlagsFromHex from './feature_flags_from_hex.js';
+import featureFlagsFromWords from './feature_flags_from_words.js';
 
-module.exports = {
+export {
   featureFlagDetails,
   featureFlagsAsHex,
   featureFlagsAsWords,

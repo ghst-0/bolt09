@@ -1,4 +1,4 @@
-const decodeFeatures = require('./decode_features');
+import decodeFeatures from './decode_features.js';
 
 const bits = 5;
 const {isArray} = Array;
@@ -21,7 +21,7 @@ const {isArray} = Array;
     }]
   }
 */
-module.exports = ({words}) => {
+export default ({words}) => {
   if (!isArray(words)) {
     throw new Error('ExpectedArrayOfWordNumbersToDeriveFeatureFlags');
   }

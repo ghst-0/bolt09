@@ -1,4 +1,4 @@
-const decodeFeatures = require('./decode_features');
+import decodeFeatures from './decode_features.js';
 
 const bits = 8;
 const uint16ByteLength = 2;
@@ -21,7 +21,7 @@ const uint16ByteLength = 2;
     }]
   }
 */
-module.exports = ({hex}) => {
+export default ({hex}) => {
   if (!hex) {
     throw new Error('ExpectedHexSerializedFeatureFlagsToDecode');
   }
