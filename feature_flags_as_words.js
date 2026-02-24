@@ -1,4 +1,4 @@
-import encodeFeatures from './encode_features.js';
+import { encodeFeatures } from './encode_features.js';
 
 const bits = 5;
 const {isArray} = Array;
@@ -17,7 +17,7 @@ const {isArray} = Array;
     words: [<Bech32 Word Number>]
   }
 */
-export default ({features}) => {
+const featureFlagsAsWords = ({features}) => {
   if (!isArray(features)) {
     throw new Error('ExpectedArrayOfFeatureBitsToEncodeAsWords');
   }
@@ -35,3 +35,5 @@ export default ({features}) => {
 
   return {words};
 };
+
+export { featureFlagsAsWords }

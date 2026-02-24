@@ -1,4 +1,4 @@
-import encodeFeatures from './encode_features.js';
+import { encodeFeatures } from './encode_features.js';
 
 const {alloc} = Buffer;
 const bits = 8;
@@ -20,7 +20,7 @@ const uint16ByteLength = 2;
     encoded: <Serialized Feature Bits Hex Encoded String>
   }
 */
-export default ({features}) => {
+const featureFlagsAsHex = ({features}) => {
   if (!isArray(features)) {
     throw new Error('ExpectedArrayOfFeaturesToEncodeAsHex');
   }
@@ -38,3 +38,5 @@ export default ({features}) => {
 
   return {encoded: concat([lengthBytes, data]).toString('hex')};
 };
+
+export { featureFlagsAsHex }

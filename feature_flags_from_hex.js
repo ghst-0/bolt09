@@ -1,4 +1,4 @@
-import decodeFeatures from './decode_features.js';
+import { decodeFeatures } from './decode_features.js';
 
 const bits = 8;
 const uint16ByteLength = 2;
@@ -21,7 +21,7 @@ const uint16ByteLength = 2;
     }]
   }
 */
-export default ({hex}) => {
+const featureFlagsFromHex = ({hex}) => {
   if (!hex) {
     throw new Error('ExpectedHexSerializedFeatureFlagsToDecode');
   }
@@ -35,3 +35,5 @@ export default ({hex}) => {
 
   return decodeFeatures({bits, elements});
 };
+
+export { featureFlagsFromHex }

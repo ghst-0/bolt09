@@ -13,7 +13,7 @@ const {max} = Math;
     data: <Feature Bits Written Into Buffer>
   }
 */
-export default ({bits, features}) => {
+const encodeFeatures = ({bits, features}) => {
   const data = Buffer.alloc(floor(max(...features) / bits) + 1);
 
   const endIndex = data.length - 1;
@@ -24,3 +24,5 @@ export default ({bits, features}) => {
 
   return {data};
 };
+
+export { encodeFeatures }

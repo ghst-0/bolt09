@@ -1,6 +1,7 @@
 import test from 'node:test';
 import { deepStrictEqual, throws,  } from 'node:assert/strict';
-import { featureFlagsFromWords } from './../index.js';
+
+import { featureFlagsFromWords } from '../feature_flags_from_words.js';
 
 const tests = [
   {

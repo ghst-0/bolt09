@@ -16,7 +16,7 @@ const isNumber = n => !isNaN(n);
     [type]: <Feature Flag Type String>
   }
 */
-export default ({bit}) => {
+const featureFlagDetails = ({bit}) => {
   if (!isNumber(bit)) {
     throw new Error('ExpectedBitNumberToGetFeatureFlagDetails');
   }
@@ -25,3 +25,5 @@ export default ({bit}) => {
 
   return flag ? { type: flag.type } : {};
 };
+
+export { featureFlagDetails }

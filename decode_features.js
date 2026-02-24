@@ -1,4 +1,4 @@
-import featureFlagDetails from './feature_flag_details.js';
+import { featureFlagDetails } from './feature_flag_details.js';
 
 const isEven = number => !(number % 2);
 const range = len => Array.from(Array(len).keys());
@@ -22,7 +22,7 @@ const range = len => Array.from(Array(len).keys());
     }]
   }
 */
-export default ({bits, elements}) => {
+const decodeFeatures = ({bits, elements}) => {
   const endIndex = elements.length - 1;
   const features = new Set();
 
@@ -40,3 +40,5 @@ export default ({bits, elements}) => {
     })),
   };
 };
+
+export { decodeFeatures }

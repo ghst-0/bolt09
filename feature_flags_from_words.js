@@ -1,4 +1,4 @@
-import decodeFeatures from './decode_features.js';
+import { decodeFeatures } from './decode_features.js';
 
 const bits = 5;
 const {isArray} = Array;
@@ -21,10 +21,12 @@ const {isArray} = Array;
     }]
   }
 */
-export default ({words}) => {
+const featureFlagsFromWords = ({words}) => {
   if (!isArray(words)) {
     throw new Error('ExpectedArrayOfWordNumbersToDeriveFeatureFlags');
   }
 
   return decodeFeatures({bits, elements: words});
 };
+
+export { featureFlagsFromWords }
